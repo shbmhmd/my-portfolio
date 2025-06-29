@@ -1,7 +1,5 @@
 # 🚨 CRITICAL: GitHub Pages Configuration Required
 
-<!-- Deployment trigger: June 30, 2025 - Force fresh GitHub Actions deployment -->
-
 ## The Problem
 Your website is currently showing a Jekyll-generated page from README.md instead of your React portfolio. This is because GitHub Pages is set to "Deploy from a branch" instead of "GitHub Actions".
 
