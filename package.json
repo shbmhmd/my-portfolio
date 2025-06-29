@@ -2,13 +2,21 @@
   "name": "react-portfolio",
   "version": "1.0.0",
   "description": "Modern React portfolio with admin panel, AI chatbot, and professional SVG icons",
-  "homepage": "https://YOUR_USERNAME.github.io/react-portfolio",
+  "homepage": "https://shbmhmd.github.io/my-portfolio",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/react-portfolio.git"
+    "url": "https://github.com/shbmhmd/my-portfolio.git"
   },
-  "keywords": ["react", "portfolio", "typescript", "vite", "admin-panel", "chatbot", "responsive"],
-  "author": "Your Name",
+  "keywords": [
+    "react",
+    "portfolio",
+    "typescript",
+    "vite",
+    "admin-panel",
+    "chatbot",
+    "responsive"
+  ],
+  "author": "Mohamed Suhaib",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -24,6 +32,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.6.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }
