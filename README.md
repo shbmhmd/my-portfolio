@@ -2,6 +2,8 @@
 
 A cutting-edge, responsive portfolio website built with React, TypeScript, and Vite. Features a modern design with glassmorphism effects, comprehensive admin panel, AI chatbot, and professional content management system.
 
+<!-- Deployment trigger: June 29, 2025 - Fixed white page issue -->
+
 ## 🚀 Features
 
 - **Modern Design**: Professional UI with glassmorphism effects, smooth animations, and polished styling
