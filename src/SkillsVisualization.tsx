@@ -1,4 +1,10 @@
 import { useState, useEffect } from 'react';
+import { 
+  FaNetworkWired, FaPython, FaReact, FaAws, FaLinux
+} from 'react-icons/fa';
+import { 
+  MdSecurity, MdSettings 
+} from 'react-icons/md';
 
 interface Skill {
   name: string;
@@ -8,18 +14,30 @@ interface Skill {
   icon: string;
 }
 
+// Icon mapping for skill icons
+const iconMap: { [key: string]: JSX.Element } = {
+  FaNetworkWired: <FaNetworkWired />,
+  MdSettings: <MdSettings />,
+  FaLinux: <FaLinux />,
+  FaPython: <FaPython />,
+  FaReact: <FaReact />,
+  FaAws: <FaAws />,
+  MdSecurity: <MdSecurity />,
+  SiWireshark: <MdSecurity />, // Using MdSecurity as fallback
+};
+
 const SkillsVisualization = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const skills: Skill[] = [
-    { name: 'Network Troubleshooting', level: 90, category: 'Networking', color: '#3b82f6', icon: '🌐' },
-    { name: 'Cisco Configuration', level: 85, category: 'Networking', color: '#3b82f6', icon: '⚙️' },
-    { name: 'Linux Administration', level: 88, category: 'Systems', color: '#10b981', icon: '🐧' },
-    { name: 'Python Programming', level: 82, category: 'Programming', color: '#f59e0b', icon: '🐍' },
-    { name: 'JavaScript/React', level: 78, category: 'Programming', color: '#f59e0b', icon: '⚛️' },
-    { name: 'AWS Cloud Services', level: 75, category: 'Cloud', color: '#8b5cf6', icon: '☁️' },
-    { name: 'Cybersecurity', level: 80, category: 'Security', color: '#ef4444', icon: '🔒' },
-    { name: 'Wireshark Analysis', level: 85, category: 'Security', color: '#ef4444', icon: '📊' },
+    { name: 'Network Troubleshooting', level: 90, category: 'Networking', color: '#3b82f6', icon: 'FaNetworkWired' },
+    { name: 'Cisco Configuration', level: 85, category: 'Networking', color: '#3b82f6', icon: 'MdSettings' },
+    { name: 'Linux Administration', level: 88, category: 'Systems', color: '#10b981', icon: 'FaLinux' },
+    { name: 'Python Programming', level: 82, category: 'Programming', color: '#f59e0b', icon: 'FaPython' },
+    { name: 'JavaScript/React', level: 78, category: 'Programming', color: '#f59e0b', icon: 'FaReact' },
+    { name: 'AWS Cloud Services', level: 75, category: 'Cloud', color: '#8b5cf6', icon: 'FaAws' },
+    { name: 'Cybersecurity', level: 80, category: 'Security', color: '#ef4444', icon: 'MdSecurity' },
+    { name: 'Wireshark Analysis', level: 85, category: 'Security', color: '#ef4444', icon: 'SiWireshark' },
   ];
 
   useEffect(() => {
@@ -44,7 +62,7 @@ const SkillsVisualization = () => {
             <div className="skill-header">
               <div className="skill-info">
                 <div className="skill-name-container">
-                  <span className="skill-icon">{skill.icon}</span>
+                  <span className="skill-icon">{iconMap[skill.icon] || iconMap['MdSecurity']}</span>
                   <span className="skill-name">{skill.name}</span>
                 </div>
                 <div className="skill-level-container">

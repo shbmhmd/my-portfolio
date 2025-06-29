@@ -1,9 +1,7 @@
-#!/bin/bash
-
 # GitHub Upload Script for Windows PowerShell
 # Run this script after installing Git
 
-echo "🚀 Starting GitHub upload process..."
+Write-Host "🚀 Starting GitHub upload process..." -ForegroundColor Cyan
 
 # Check if git is installed
 if (!(Get-Command git -ErrorAction SilentlyContinue)) {

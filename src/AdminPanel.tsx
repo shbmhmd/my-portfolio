@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react';
 import { 
-  PlusIcon, EditIcon, DeleteIcon, SaveIcon, CancelIcon, 
-  DashboardIcon, ProjectIcon, BlogIcon, SkillIcon, ContactIcon, SettingsIcon,
-  UsersIcon, LockIcon, TrashIcon, CheckIcon, CloseIcon, KeyIcon, 
-  RocketIcon, BrainIcon
-} from './Icons';
+  MdAdd, MdEdit, MdDelete, MdSave, MdCancel, MdDashboard, 
+  MdWork, MdArticle, MdCode, MdEmail, MdSettings, MdPeople,
+  MdLock, MdDelete as MdTrash, MdCheck, MdClose, MdKey,
+  MdRocket, MdPsychology, MdCloud, MdSecurity, MdDevices,
+  MdComputer, MdTerminal, MdBuild
+} from 'react-icons/md';
+import { 
+  FaAws, FaReact, FaPython, FaDocker, FaLinux, FaGithub,
+  FaNetworkWired, FaShieldAlt
+} from 'react-icons/fa';
+import { 
+  SiCisco, SiMikrotik, SiWireshark, SiJavascript,
+  SiTerraform, SiJenkins
+} from 'react-icons/si';
 
 interface Project {
   id: string;
@@ -161,7 +170,7 @@ const AdminPanel = () => {
         description: 'Real-time network monitoring system with alerting capabilities',
         tech: ['Python', 'SNMP', 'React', 'WebSocket'],
         link: 'https://github.com/shbmhmd/network-monitor',
-        icon: '🌐'
+        icon: 'MdDevices'
       },
       {
         id: '2',
@@ -169,7 +178,7 @@ const AdminPanel = () => {
         description: 'Automated AWS infrastructure deployment using Terraform',
         tech: ['Terraform', 'AWS', 'Python', 'Jenkins'],
         link: 'https://github.com/shbmhmd/cloud-automation',
-        icon: '☁️'
+        icon: 'MdCloud'
       }
     ]);
 
@@ -188,22 +197,22 @@ const AdminPanel = () => {
 
     // Load skills
     setSkills([
-      { name: 'Python', level: 90, category: 'Programming', color: '#3776ab', icon: '🐍' },
-      { name: 'JavaScript', level: 85, category: 'Programming', color: '#f7df1e', icon: '🟨' },
-      { name: 'React', level: 80, category: 'Programming', color: '#61dafb', icon: '⚛️' },
-      { name: 'Bash Scripting', level: 75, category: 'Programming', color: '#4eaa25', icon: '📜' },
-      { name: 'AWS', level: 75, category: 'Cloud & DevOps', color: '#ff9900', icon: '☁️' },
-      { name: 'Azure', level: 70, category: 'Cloud & DevOps', color: '#0078d4', icon: '🔵' },
-      { name: 'Docker', level: 80, category: 'Cloud & DevOps', color: '#2496ed', icon: '🐳' },
-      { name: 'Linux Administration', level: 85, category: 'Cloud & DevOps', color: '#fcc624', icon: '🐧' },
-      { name: 'Cisco', level: 85, category: 'Networking', color: '#1ba0d7', icon: '🌐' },
-      { name: 'Mikrotik', level: 75, category: 'Networking', color: '#293239', icon: '📡' },
-      { name: 'Network Troubleshooting', level: 90, category: 'Networking', color: '#3b82f6', icon: '🔧' },
-      { name: 'Wireshark', level: 80, category: 'Networking', color: '#1679a7', icon: '🔍' },
-      { name: 'Cybersecurity', level: 85, category: 'Security', color: '#ff6b6b', icon: '🔒' },
-      { name: 'Packet Analysis', level: 80, category: 'Security', color: '#4ecdc4', icon: '📊' },
-      { name: 'Vulnerability Assessment', level: 75, category: 'Security', color: '#ff7675', icon: '�️' },
-      { name: 'Network Security', level: 80, category: 'Security', color: '#6c5ce7', icon: '🔐' }
+      { name: 'Python', level: 90, category: 'Programming', color: '#3776ab', icon: 'FaPython' },
+      { name: 'JavaScript', level: 85, category: 'Programming', color: '#f7df1e', icon: 'SiJavascript' },
+      { name: 'React', level: 80, category: 'Programming', color: '#61dafb', icon: 'FaReact' },
+      { name: 'Bash Scripting', level: 75, category: 'Programming', color: '#4eaa25', icon: 'MdTerminal' },
+      { name: 'AWS', level: 75, category: 'Cloud & DevOps', color: '#ff9900', icon: 'FaAws' },
+      { name: 'Azure', level: 70, category: 'Cloud & DevOps', color: '#0078d4', icon: 'MdCloud' },
+      { name: 'Docker', level: 80, category: 'Cloud & DevOps', color: '#2496ed', icon: 'FaDocker' },
+      { name: 'Linux Administration', level: 85, category: 'Cloud & DevOps', color: '#fcc624', icon: 'FaLinux' },
+      { name: 'Cisco', level: 85, category: 'Networking', color: '#1ba0d7', icon: 'SiCisco' },
+      { name: 'Mikrotik', level: 75, category: 'Networking', color: '#293239', icon: 'SiMikrotik' },
+      { name: 'Network Troubleshooting', level: 90, category: 'Networking', color: '#3b82f6', icon: 'MdBuild' },
+      { name: 'Wireshark', level: 80, category: 'Networking', color: '#1679a7', icon: 'SiWireshark' },
+      { name: 'Cybersecurity', level: 85, category: 'Security', color: '#ff6b6b', icon: 'MdSecurity' },
+      { name: 'Packet Analysis', level: 80, category: 'Security', color: '#4ecdc4', icon: 'MdDevices' },
+      { name: 'Vulnerability Assessment', level: 75, category: 'Security', color: '#ff7675', icon: 'FaShieldAlt' },
+      { name: 'Network Security', level: 80, category: 'Security', color: '#6c5ce7', icon: 'MdLock' }
     ]);
 
     // Load skill categories
@@ -211,25 +220,25 @@ const AdminPanel = () => {
       {
         id: '1',
         name: 'Networking',
-        icon: 'NetworkIcon',
+        icon: 'FaNetworkWired',
         skills: ['Cisco', 'Mikrotik', 'Network Troubleshooting', 'Wireshark']
       },
       {
         id: '2',
         name: 'Cloud & DevOps',
-        icon: 'CloudIcon',
+        icon: 'MdCloud',
         skills: ['AWS', 'Azure', 'Linux Administration', 'Docker']
       },
       {
         id: '3',
         name: 'Programming',
-        icon: 'CodeIcon',
+        icon: 'MdCode',
         skills: ['Python', 'Bash Scripting', 'JavaScript', 'React']
       },
       {
         id: '4',
         name: 'Security',
-        icon: 'SecurityIcon',
+        icon: 'MdSecurity',
         skills: ['Cybersecurity', 'Packet Analysis', 'Vulnerability Assessment', 'Network Security']
       }
     ]);
@@ -269,7 +278,7 @@ const AdminPanel = () => {
       description: 'Project description',
       tech: ['Technology'],
       link: 'https://github.com/shbmhmd/new-project',
-      icon: '🚀'
+      icon: 'MdRocket'
     };
     setProjects([...projects, newProject]);
     setEditingProject(newProject);
@@ -323,7 +332,7 @@ const AdminPanel = () => {
       level: 50,
       category: 'General',
       color: '#3b82f6',
-      icon: '🎯'
+      icon: 'MdCode'
     };
     setSkills([...skills, newSkill]);
     setEditingSkill(newSkill);
@@ -357,7 +366,7 @@ const AdminPanel = () => {
     const newCategory: SkillCategory = {
       id: Date.now().toString(),
       name: 'New Category',
-      icon: 'CodeIcon',
+      icon: 'MdCode',
       skills: []
     };
     setSkillCategories([...skillCategories, newCategory]);
@@ -465,7 +474,7 @@ const AdminPanel = () => {
             boxShadow: '0 4px 12px rgba(102, 126, 234, 0.3)'
           }}
         >
-          <SettingsIcon size={20} />
+          <MdSettings size={20} />
         </button>
 
         {isOpen && (
@@ -582,16 +591,16 @@ const AdminPanel = () => {
 
         <nav style={{ flex: 1 }}>
           {[
-            { id: 'dashboard', label: 'Dashboard', icon: <DashboardIcon size={18} /> },
-            { id: 'homepage', label: 'Home Page', icon: <RocketIcon size={18} /> },
-            { id: 'about', label: 'About Section', icon: <BrainIcon size={18} /> },
-            { id: 'projects', label: 'Projects', icon: <ProjectIcon size={18} /> },
-            { id: 'blog', label: 'Blog Posts', icon: <BlogIcon size={18} /> },
-            { id: 'skills', label: 'Skills', icon: <SkillIcon size={18} /> },
-            { id: 'contact', label: 'Contact Info', icon: <ContactIcon size={18} /> },
+            { id: 'dashboard', label: 'Dashboard', icon: <MdDashboard size={18} /> },
+            { id: 'homepage', label: 'Home Page', icon: <MdRocket size={18} /> },
+            { id: 'about', label: 'About Section', icon: <MdPsychology size={18} /> },
+            { id: 'projects', label: 'Projects', icon: <MdWork size={18} /> },
+            { id: 'blog', label: 'Blog Posts', icon: <MdArticle size={18} /> },
+            { id: 'skills', label: 'Skills', icon: <MdCode size={18} /> },
+            { id: 'contact', label: 'Contact Info', icon: <MdEmail size={18} /> },
             ...(currentUser?.role === 'admin' ? [
-              { id: 'users', label: 'User Management', icon: <UsersIcon size={18} /> },
-              { id: 'settings', label: 'Settings', icon: <SettingsIcon size={18} /> }
+              { id: 'users', label: 'User Management', icon: <MdPeople size={18} /> },
+              { id: 'settings', label: 'Settings', icon: <MdSettings size={18} /> }
             ] : [])
           ].map(tab => (
             <button
@@ -682,7 +691,7 @@ const AdminPanel = () => {
               <h2 style={{ color: 'var(--text-primary)', margin: 0 }}>Home Page Content</h2>
               {!editingHomeContent && (
                 <button onClick={() => setEditingHomeContent(true)} className="admin-btn admin-btn-primary">
-                  <EditIcon size={16} />
+                  <MdEdit size={16} />
                   Edit Content
                 </button>
               )}
@@ -767,14 +776,14 @@ const AdminPanel = () => {
                       onClick={() => saveHomeContent(homePageContent)}
                       className="admin-btn admin-btn-primary"
                     >
-                      <SaveIcon size={16} />
+                      <MdSave size={16} />
                       Save Changes
                     </button>
                     <button
                       onClick={() => setEditingHomeContent(false)}
                       className="admin-btn admin-btn-secondary"
                     >
-                      <CancelIcon size={16} />
+                      <MdCancel size={16} />
                       Cancel
                     </button>
                   </div>
@@ -815,7 +824,7 @@ const AdminPanel = () => {
               <h2 style={{ color: 'var(--text-primary)', margin: 0 }}>About Section Content</h2>
               {!editingAboutContent && (
                 <button onClick={() => setEditingAboutContent(true)} className="admin-btn admin-btn-primary">
-                  <EditIcon size={16} />
+                  <MdEdit size={16} />
                   Edit Content
                 </button>
               )}
@@ -950,14 +959,14 @@ const AdminPanel = () => {
                       onClick={() => saveAboutContent(aboutContent)}
                       className="admin-btn admin-btn-primary"
                     >
-                      <SaveIcon size={16} />
+                      <MdSave size={16} />
                       Save Changes
                     </button>
                     <button
                       onClick={() => setEditingAboutContent(false)}
                       className="admin-btn admin-btn-secondary"
                     >
-                      <CancelIcon size={16} />
+                      <MdCancel size={16} />
                       Cancel
                     </button>
                   </div>
@@ -1020,7 +1029,7 @@ const AdminPanel = () => {
                   gap: '0.5rem'
                 }}
               >
-                <PlusIcon size={16} /> Add Project
+                <MdAdd size={16} /> Add Project
               </button>
             </div>
 
@@ -1096,7 +1105,7 @@ const AdminPanel = () => {
                             gap: '0.5rem'
                           }}
                         >
-                          <SaveIcon size={14} /> Save
+                          <MdSave size={14} /> Save
                         </button>
                         <button 
                           onClick={() => setEditingProject(null)}
@@ -1112,7 +1121,7 @@ const AdminPanel = () => {
                             gap: '0.5rem'
                           }}
                         >
-                          <CancelIcon size={14} /> Cancel
+                          <MdCancel size={14} /> Cancel
                         </button>
                       </div>
                     </div>
@@ -1148,7 +1157,7 @@ const AdminPanel = () => {
                               cursor: 'pointer'
                             }}
                           >
-                            <EditIcon size={14} />
+                            <MdEdit size={14} />
                           </button>
                           <button 
                             onClick={() => deleteProject(project.id)}
@@ -1161,7 +1170,7 @@ const AdminPanel = () => {
                               cursor: 'pointer'
                             }}
                           >
-                            <TrashIcon size={14} />
+                            <MdTrash size={14} />
                           </button>
                         </div>
                       </div>
@@ -1191,7 +1200,7 @@ const AdminPanel = () => {
                   gap: '0.5rem'
                 }}
               >
-                <PlusIcon size={16} /> Add Post
+                <MdAdd size={16} /> Add Post
               </button>
             </div>
 
@@ -1281,7 +1290,7 @@ const AdminPanel = () => {
                             gap: '0.5rem'
                           }}
                         >
-                          <SaveIcon size={14} /> Save
+                          <MdSave size={14} /> Save
                         </button>
                         <button 
                           onClick={() => setEditingBlog(null)}
@@ -1297,7 +1306,7 @@ const AdminPanel = () => {
                             gap: '0.5rem'
                           }}
                         >
-                          <CancelIcon size={14} /> Cancel
+                          <MdCancel size={14} /> Cancel
                         </button>
                       </div>
                     </div>
@@ -1340,7 +1349,7 @@ const AdminPanel = () => {
                               cursor: 'pointer'
                             }}
                           >
-                            <EditIcon size={14} />
+                            <MdEdit size={14} />
                           </button>
                           <button 
                             onClick={() => deleteBlogPost(post.id)}
@@ -1353,7 +1362,7 @@ const AdminPanel = () => {
                               cursor: 'pointer'
                             }}
                           >
-                            <TrashIcon size={14} />
+                            <MdTrash size={14} />
                           </button>
                         </div>
                       </div>
@@ -1371,7 +1380,7 @@ const AdminPanel = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                 <h2 style={{ color: 'var(--text-primary)', margin: 0 }}>Skill Categories</h2>
                 <button onClick={addSkillCategory} className="admin-btn admin-btn-primary">
-                  <PlusIcon size={16} />
+                  <MdAdd size={16} />
                   Add Category
                 </button>
               </div>
@@ -1429,14 +1438,14 @@ const AdminPanel = () => {
                             onClick={() => saveSkillCategory(editingSkillCategory)}
                             className="admin-btn admin-btn-primary"
                           >
-                            <SaveIcon size={16} />
+                            <MdSave size={16} />
                             Save
                           </button>
                           <button
                             onClick={() => setEditingSkillCategory(null)}
                             className="admin-btn admin-btn-secondary"
                           >
-                            <CancelIcon size={16} />
+                            <MdCancel size={16} />
                             Cancel
                           </button>
                         </div>
@@ -1459,14 +1468,14 @@ const AdminPanel = () => {
                               className="admin-btn admin-btn-secondary"
                               style={{ padding: '0.5rem' }}
                             >
-                              <EditIcon size={14} />
+                              <MdEdit size={14} />
                             </button>
                             <button
                               onClick={() => deleteSkillCategory(category.id)}
                               className="admin-btn admin-btn-danger"
                               style={{ padding: '0.5rem' }}
                             >
-                              <DeleteIcon size={14} />
+                              <MdDelete size={14} />
                             </button>
                           </div>
                         </div>
@@ -1488,7 +1497,7 @@ const AdminPanel = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                 <h2 style={{ color: 'var(--text-primary)', margin: 0 }}>Individual Skills</h2>
                 <button onClick={addSkill} className="admin-btn admin-btn-primary">
-                  <PlusIcon size={16} />
+                  <MdAdd size={16} />
                   Add Skill
                 </button>
               </div>
@@ -1560,14 +1569,14 @@ const AdminPanel = () => {
                             onClick={() => saveSkill(editingSkill)}
                             className="admin-btn admin-btn-primary"
                           >
-                            <SaveIcon size={16} />
+                            <MdSave size={16} />
                             Save
                           </button>
                           <button
                             onClick={() => setEditingSkill(null)}
                             className="admin-btn admin-btn-secondary"
                           >
-                            <CancelIcon size={16} />
+                            <MdCancel size={16} />
                             Cancel
                           </button>
                         </div>
@@ -1599,14 +1608,14 @@ const AdminPanel = () => {
                             className="admin-btn admin-btn-secondary"
                             style={{ padding: '0.5rem' }}
                           >
-                            <EditIcon size={14} />
+                            <MdEdit size={14} />
                           </button>
                           <button
                             onClick={() => deleteSkill(skill.name)}
                             className="admin-btn admin-btn-danger"
                             style={{ padding: '0.5rem' }}
                           >
-                            <DeleteIcon size={14} />
+                            <MdDelete size={14} />
                           </button>
                         </div>
                       </div>
@@ -1707,7 +1716,7 @@ const AdminPanel = () => {
                   gap: '0.5rem'
                 }}
               >
-                <SaveIcon size={16} /> Save Changes
+                <MdSave size={16} /> Save Changes
               </button>
             </div>
           </div>
@@ -1731,7 +1740,7 @@ const AdminPanel = () => {
                   gap: '0.5rem'
                 }}
               >
-                <PlusIcon size={16} /> Add User
+                <MdAdd size={16} /> Add User
               </button>
             </div>
 
@@ -1799,7 +1808,7 @@ const AdminPanel = () => {
                             gap: '0.5rem'
                           }}
                         >
-                          <SaveIcon size={14} /> Save
+                          <MdSave size={14} /> Save
                         </button>
                         <button 
                           onClick={() => setEditingUser(null)}
@@ -1815,7 +1824,7 @@ const AdminPanel = () => {
                             gap: '0.5rem'
                           }}
                         >
-                          <CancelIcon size={14} /> Cancel
+                          <MdCancel size={14} /> Cancel
                         </button>
                       </div>
                     </div>
@@ -1823,7 +1832,7 @@ const AdminPanel = () => {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <div>
                         <h4 style={{ color: 'var(--text-primary)', margin: '0 0 0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <UsersIcon size={16} />
+                          <MdPeople size={16} />
                           {user.username}
                           {currentUser?.id === user.id && <span style={{ color: 'var(--accent)', fontSize: '0.75rem' }}> (You)</span>}
                         </h4>
@@ -1844,7 +1853,7 @@ const AdminPanel = () => {
                               cursor: 'pointer'
                             }}
                           >
-                            <EditIcon size={14} />
+                            <MdEdit size={14} />
                           </button>
                           {currentUser?.id !== user.id && (
                             <button 
@@ -1858,7 +1867,7 @@ const AdminPanel = () => {
                                 cursor: 'pointer'
                               }}
                             >
-                              <TrashIcon size={14} />
+                              <MdTrash size={14} />
                             </button>
                           )}
                       </div>
@@ -1898,7 +1907,7 @@ const AdminPanel = () => {
                     gap: '0.5rem'
                   }}
                 >
-                  {showPasswordChange ? <CloseIcon size={14} /> : <LockIcon size={14} />}
+                  {showPasswordChange ? <MdClose size={14} /> : <MdLock size={14} />}
                   {showPasswordChange ? 'Cancel' : 'Change Password'}
                 </button>
               </div>
@@ -1958,7 +1967,7 @@ const AdminPanel = () => {
                       gap: '0.5rem'
                     }}
                   >
-                    <SaveIcon size={16} /> Update Password
+                    <MdSave size={16} /> Update Password
                   </button>
                 </div>
               )}
