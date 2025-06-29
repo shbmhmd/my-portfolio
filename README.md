@@ -192,8 +192,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📧 Contact
 
-Your Name - your.email@example.com
-Project Link: https://github.com/your-username/react-portfolio
+Your Name - shb.mhmd.375@gmail.com
+Project Link: https://github.com/shbmhmd/react-portfolio
 
 ## 🙏 Acknowledgments
 
